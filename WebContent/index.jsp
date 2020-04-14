@@ -1,39 +1,45 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ page language="java" %>
+<%@ page import = "java.sql.Connection"%>
+<%@ page import = "java.sql.DriverManager"%> 
+<%@ page import = "java.sql.ResultSet"%> 
+<%@ page import = "java.sql.Statement"%> 
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>empleados</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
-HOLA MUNDO
+
 
 <body class="text-center">
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
   <header class="masthead mb-auto">
-    <div class="inner">
-      <h3 class="masthead-brand">Cover</h3>
-      <nav class="nav nav-masthead justify-content-center">
-        <a class="nav-link active" href="index.jsp">inicio</a>
-        <a class="nav-link" href="NewFile.jsp">caracteristicas</a>
-        <a class="nav-link" href="Contactos.jsp">Contactos</a>
-      </nav>
-    </div>
+    <div class="p-3 mb-2 bg-primary text-white">
+      <h3 class="masthead-brand">hola empleados</h3>
+       </div>
+     
+   
   </header>
 
   <main role="main" class="inner cover">
-    <h1 class="cover-heading">WEB PAGE</h1>
-    <p class="lead"></p>
-    <p class="lead">
-      <a href="#" class="btn btn-lg btn-secondary"></a>
-    </p>
+      
+      <div class="p-3 mb-2 bg-info text-white">
+    <h1 class="cover-heading">TU WEB PAGE.COM</h1>
+   </div>
+   <br>
+    <a   href="NewFile.jsp"> <button  class="btn btn-info"   >buscar empleado</button></a>
+<a   href="registro.html"><button  class="btn btn-info">registrar empleado</button></a>
+ 
   </main>
-
-  <footer class="mastfoot mt-auto">
-    <div class="inner">
-      <p></p>
+        
+        <br>
+  <footer  padding="10" class="mastfoot mt-auto">
+    <div  class="p-3 mb-2 bg-info text-white">
+      <p>Juan Pablo Cardenas Quiñonez 1151849</p>
     </div>
   </footer>
 </div>

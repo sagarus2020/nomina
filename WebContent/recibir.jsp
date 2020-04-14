@@ -1,32 +1,34 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@page import="primero.empleadoDAO"%>
+<%@page import="primero.empleadoV"%>
+
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.util.Date"%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<%@ page import="primero.Mensaje"%>
-<%@page import="primero.utilidad"%>
 <html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
+    <head>
+        
 <%
-String nombre = request.getParameter("nombre");
-String email = request.getParameter("email");
-String website = request.getParameter("website");
-String mensaje  = request.getParameter("mensaje");
-out.print("Nombre"+nombre);
 
-Mensaje m = new Mensaje();
+String codigo = (String) request.getParameter("codigo");
+String cedula = (String) request.getParameter("cedula");
+String nombre = (String) request.getParameter("nombre");
 
-m.setNombre(nombre);
-m.setEmail(email);
-m.setWebsite(website);
-m.setMensaje(mensaje);
+String fechaI  = request.getParameter("fechaI");
+String fechaS  = request.getParameter("fechaS");
+String fechaR  = request.getParameter("fechaR");
 
-if(utilidad.enviarCorreo(m))
-	out.println("Enviado");
-else
-	out.println("Error no enviado");
+
+
+   empleadoV vo = new empleadoV(codigo,cedula,nombre,fechaI,fechaS,fechaR);
+            empleadoDAO dao = new empleadoDAO(vo);
+            
+            dao.agregarUsuario();
+            
+            response.sendRedirect("index.jsp?"+"EmpleadoCreadoConExito");
+
 %>
-</body>
+
+</head>
 </html>
